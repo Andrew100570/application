@@ -28,25 +28,6 @@ class WordRequest extends FormRequest
     public function rules()
     {
 
-            [
-                'subject.required' => 'Поле "Предмет" обязательно для заполнения.',
-                'subject.string' => 'Поле "Предмет" должно быть строкой.',
-                'user_name.required' => 'Поле "Имя пользователя" обязательно для заполнения.',
-                'user_name.string' => 'Поле "Имя пользователя" должно быть строкой.',
-                'email.required' => 'Поле "Email" обязательно для заполнения.',
-                'email.email' => 'Поле "Email" должно содержать @.',
-                'email.unique' => 'Поле "Email" должно содержать уникальным.',
-                'ftp_login.array' => 'Поле "Ftp_login" должно быть массивом.',
-                'ftp_login.*.required' => 'Поле "Ftp_login" обязательно для заполнения.',
-                'ftp_login.string.*' => 'Поле "Ftp_login" должно быть строкой.',
-                'ftp_password.array' => 'Поле "Ftp_password" должно быть строкой.',
-                'ftp_password.*.required' => 'Поле "Ftp_password" обязательно для заполнения.',
-                'content.*.required' => 'Поле "Content" обязательно для заполнения.',
-                'content.array' => 'Поле "Content" должно быть массивом.',
-                'author.*.required' => 'Поле "Author" обязательно для заполнения.',
-                'author.array' => 'Поле "Author" должно быть массивом.',
-            ]);
-
         return [
             'subject'                     => ['required', 'string'],
             'user_name'                   => ['required', 'string'],
