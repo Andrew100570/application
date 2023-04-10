@@ -20,7 +20,8 @@ class IsThereAtoken
     {
 
         $token = $request->header('x-auth-token');
-        if (isset($token) and Hash::check('dplp31qppIkvoxr3lIqsX77BrUrhDhsg9GFk9atO', $token)) {
+
+        if (isset($token) and $token ==='dplp31qppIkvoxr3lIqsX77BrUrhDhsg9GFk9atO') {
                 return $next($request);
         } else {
             return response()->json('{"response":"Error"}', 403, ['Content-Type' => 'application/json; charset=UTF-8']);

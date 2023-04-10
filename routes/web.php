@@ -32,4 +32,3 @@ Route::prefix('admin')->middleware('Admin')->group(function () {
 
 Route::get('/send-email', [FeedbackController::class,'send'])->middleware('Admin');
 
-Route::post('/api' , [ApiController::class,'api'])->middleware('token')->name('api');
