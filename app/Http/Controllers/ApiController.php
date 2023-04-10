@@ -13,7 +13,6 @@ class ApiController extends Controller
 {
     public function api(Request $request)
     {
-        dd($request['ticket']);
 
         $this->saveTicket($request);
 
