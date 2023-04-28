@@ -4,6 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ApiController;
+use Elastic\Elasticsearch\ClientBuilder;
+use App\Models\Ticket;
+use App\Models\Message;
+use App\Http\Controllers\SendController;
+use App\Http\Controllers\RabbitController;
+use App\Http\Controllers\FastDeliveryController;
+use App\Http\Controllers\SlowDeliveryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +39,5 @@ Route::prefix('admin')->middleware('Admin')->group(function () {
 
 Route::get('/send-email', [FeedbackController::class,'send'])->middleware('Admin');
 
+Route::post('price', [FastDeliveryController::class, 'calculation']);
+Route::post('slowPrice', [SlowDeliveryController::class, 'calculation']);
